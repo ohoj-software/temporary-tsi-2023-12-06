@@ -3,13 +3,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Binding var document: DocumentWithWelcomeScreenDocument
+    @Binding var text: String
 
     var body: some View {
-        TextEditor(text: $document.text)
+        TextEditor(text: $text)
     }
 }
 
 #Preview {
-    ContentView(document: .constant(DocumentWithWelcomeScreenDocument()))
+    ContentView(text: .constant("Foo"))
 }
