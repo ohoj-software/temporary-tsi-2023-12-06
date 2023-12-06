@@ -5,6 +5,9 @@ import SwiftUI
 enum SceneID: String, CaseIterable {
     // Welcome window
     case welcome
+
+    // The about windows -> "App" -> "About App"
+    case about
 }
 
 enum AppConstants: String {
@@ -21,6 +24,8 @@ struct ExampleApp: App {
         WelcomeWindowScene()
 
         DocumentScene()
+
+        AboutWindowScene()
 
         Settings {
             SettingsView()
@@ -68,5 +73,16 @@ struct DocumentScene: Scene {
         .defaultPosition(.center)
         .windowStyle(.automatic)
         .windowToolbarStyle(.unified)
+    }
+}
+
+
+struct AboutWindowScene: Scene {
+    var body: some Scene {
+        Window("About", id: SceneID.about.rawValue) {
+            VStack {
+                Text("Just some example text")
+            }
+        }
     }
 }
